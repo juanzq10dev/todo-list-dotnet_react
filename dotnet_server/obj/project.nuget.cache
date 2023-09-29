@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "M/X8LGS7k2rpEAt4FzcMLG4Q697C6DMAADPjfWJOmrwb7qqA3ZejunzbsQnubMqaifUJ68ksjtgBSzFAOs2O5Q==",
+  "success": true,
+  "projectFilePath": "/home/fundacion/Documents/Desarrollo de sistemas web/dotnet_server/dotnet_server.csproj",
+  "expectedPackageFiles": [
+    "/home/fundacion/.nuget/packages/microsoft.aspnetcore.openapi/7.0.11/microsoft.aspnetcore.openapi.7.0.11.nupkg.sha512",
+    "/home/fundacion/.nuget/packages/microsoft.extensions.apidescription.server/6.0.5/microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "/home/fundacion/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/home/fundacion/.nuget/packages/swashbuckle.aspnetcore/6.5.0/swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "/home/fundacion/.nuget/packages/swashbuckle.aspnetcore.swagger/6.5.0/swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "/home/fundacion/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.5.0/swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "/home/fundacion/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.5.0/swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
