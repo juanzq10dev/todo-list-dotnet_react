@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using dotnet_server.Models;
 using dotnet_server.Services;
 using Microsoft.AspNetCore.Mvc;
-using MongoDB.Driver.Core.Authentication;
 
 namespace dotnet_server.Controllers
 {
@@ -27,6 +22,51 @@ namespace dotnet_server.Controllers
         {
             await _tasksService.CreateAsync(task);
             return CreatedAtAction(nameof(Get), new { id = task.Id }, task);
+        }
+        
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ToDoTask>> Get(int id)
+        {
+            var toDoTask = await _tasksService.GetAsync(id); 
+
+            if (toDoTask is null)
+            {
+                return NotFound();
+            }
+
+            return toDoTask; 
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, ToDoTask updatedTask)
+        {
+            var todoTask = await _tasksService.GetAsync(id); 
+
+            if (todoTask is null) 
+            {
+                return NotFound();
+            }
+
+            updatedTask.Id = todoTask.Id; 
+
+            await _tasksService.UpdateAsync(id, updatedTask);
+
+            return NoContent(); 
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete (int id)
+        {
+            var task = await _tasksService.GetAsync(id); 
+
+            if (task is null)
+            {
+                return NotFound(); 
+            }
+
+            await _tasksService.RemoveAsync(id); 
+
+            return NoContent();
         }
 
     }
