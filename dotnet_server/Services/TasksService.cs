@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BookStoreApi.Services;
 using dotnet_server.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Driver;

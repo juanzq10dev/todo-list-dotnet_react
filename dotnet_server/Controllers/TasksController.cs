@@ -10,7 +10,7 @@ using MongoDB.Driver.Core.Authentication;
 namespace dotnet_server.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class TasksController : ControllerBase
     {
         private readonly TasksService _tasksService; 

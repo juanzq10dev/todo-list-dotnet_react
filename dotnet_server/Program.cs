@@ -1,9 +1,18 @@
-using BookStoreApi.Services;
 using dotnet_server.Models;
 using dotnet_server.Services;
 
-var builder = WebApplication.CreateBuilder(args);
+var mySpecificOrigins = "_mySpecificOrigins";
 
+var builder = WebApplication.CreateBuilder(args);
+//cors 
+builder.Services.AddCors(options => 
+{
+    options.AddPolicy( name: mySpecificOrigins,
+        policy => {
+        policy.WithOrigins("http://localhost:3000")
+        .AllowAnyHeader().AllowAnyMethod().AllowCredentials();
+    });
+});
 // Add services to the container.
 builder.Services.Configure<TasksDatabaseSettings>(builder.Configuration.GetSection("TaskDatabase"));
 builder.Services.AddControllers();
@@ -22,6 +31,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(mySpecificOrigins);
 
 app.UseAuthorization();
 

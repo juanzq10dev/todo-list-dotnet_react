@@ -11,8 +11,8 @@ namespace dotnet_server.Models
         [BsonId]
         public int Id { get; set; }
 
-        public string Name { get; set; } = null!; 
+        public string Name { get; set; } = null!;
 
-        public bool Status { get; set; } = false;
+        public bool Completed { get; set; } = false;
     }
 }
