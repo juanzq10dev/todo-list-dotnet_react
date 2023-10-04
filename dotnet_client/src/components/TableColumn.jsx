@@ -1,4 +1,3 @@
-import axios from "axios";
 import TaskCard from "./TaskCard";
 
 export default function TableColumn({tasksArray}) {
