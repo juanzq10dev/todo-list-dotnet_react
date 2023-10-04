@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 import Card from './card';
 
 export function TaskColumn() {
-    const [data, setData] = useState([])
+    const [data, setData] = useState<{ id: number; name: string; completed: boolean}[]>([])
     
 useEffect(() => {
   const fetchData = async () => {
-      const response = await fetch("http://127.0.0.1:5192/api/tasks");
+      const response = await fetch("http://127.0.0.1:5192/tasks");
       const data = await response.json();
       setData(data);    
   };
@@ -21,7 +21,7 @@ useEffect(() => {
         <div>
             {data.map((task) => (
               <div key={task.id}>
-                <Card name={task.name} />
+                <Card name={task.name} isCompleted={task.completed}/>
               </div>
             ))}
         </div>
