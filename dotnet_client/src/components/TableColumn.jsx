@@ -1,3 +1,4 @@
+import axios from "axios";
 import TaskCard from "./TaskCard";
 
 export default function TableColumn({tasksArray}) {
@@ -5,7 +6,7 @@ export default function TableColumn({tasksArray}) {
         <div>
             {tasksArray.map((task) => {
                 return (
-                    <TaskCard name={task.name} isCompleted={task.completed}></TaskCard>
+                    <TaskCard name={task.name} isCompleted={task.completed} id={task.id}></TaskCard>
                 )                   
             })}
         </div>
