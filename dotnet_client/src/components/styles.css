@@ -1,0 +1,12 @@
+.margin {
+    margin: 10px 10px;
+}
+
+.horizontal-margin {
+    margin: 0 10px;
+}
+
+.display-flex {
+    display: flex;
+    justify-content:center;
+}

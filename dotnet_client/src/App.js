@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import TableColumn from './components/TableColumn';
 import Input from './components/Input';
 import { baseURL } from './const/const';
+import NavVar from './components/Navbar';
 
 function App() {
   const [post, setPost] = useState([]);
@@ -17,9 +18,7 @@ function App() {
   if (!post) return null; 
   return (
     <body>
-      <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+      <NavVar></NavVar>
       <Input></Input>
       <TableColumn tasksArray={post}></TableColumn>
     </body>
