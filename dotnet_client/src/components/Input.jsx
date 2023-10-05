@@ -11,11 +11,14 @@ export default function Input() {
     };
 
     function createPost() {
-        axios.post(baseURL, {
-        id: "",
-        name: inputText,
-        status: false
-        })
+        if (inputText.trim()) {
+            axios.post(baseURL, {
+            id: "",
+            name: inputText.trim(),
+            status: false
+            })
+            setInputText("")
+        }
     }
     
     return (
