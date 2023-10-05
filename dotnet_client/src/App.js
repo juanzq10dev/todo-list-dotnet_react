@@ -14,21 +14,12 @@ function App() {
     })
   })
 
-  function createPost() {
-    axios.post(baseURL, {
-      id: 3,
-      name: "Create endpoints for tasks",
-      status: true
-    })
-  }
-
   if (!post) return null; 
   return (
     <body>
       <h1 class="text-3xl font-bold underline">
         Hello world!
       </h1>
-      <button onClick={createPost}>Add tasks</button>
       <Input></Input>
       <TableColumn tasksArray={post}></TableColumn>
     </body>

@@ -12,9 +12,9 @@ export default function Input() {
 
     function createPost() {
         axios.post(baseURL, {
-        id: 4,
+        id: "",
         name: inputText,
-        status: true
+        status: false
         })
     }
     

@@ -1,6 +1,7 @@
 using dotnet_server.Models;
 using dotnet_server.Services;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 
 namespace dotnet_server.Controllers
 {
@@ -25,7 +26,7 @@ namespace dotnet_server.Controllers
         }
         
         [HttpGet("{id}")]
-        public async Task<ActionResult<ToDoTask>> Get(int id)
+        public async Task<ActionResult<ToDoTask>> Get(string id)
         {
             var toDoTask = await _tasksService.GetAsync(id); 
 
@@ -38,7 +39,7 @@ namespace dotnet_server.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, ToDoTask updatedTask)
+        public async Task<IActionResult> Update(string id, ToDoTask updatedTask)
         {
             var todoTask = await _tasksService.GetAsync(id); 
 
@@ -55,7 +56,7 @@ namespace dotnet_server.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete (int id)
+        public async Task<IActionResult> Delete (string id)
         {
             var task = await _tasksService.GetAsync(id); 
 
