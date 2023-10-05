@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const baseURL = "http://127.0.0.1:5192/Tasks"; 
+import { baseURL } from "../const/const";
 
 export default function TaskCard({name, isCompleted, id}) {
     function deleteTask() {

@@ -3,8 +3,8 @@ import axios from "axios";
 import { useEffect, useState } from "react"; 
 import TableColumn from './components/TableColumn';
 import Input from './components/Input';
+import { baseURL } from './const/const';
 
-const baseURL = "http://127.0.0.1:5192/tasks"; 
 function App() {
   const [post, setPost] = useState([]);
 
