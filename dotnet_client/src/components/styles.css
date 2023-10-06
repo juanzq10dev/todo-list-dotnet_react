@@ -2,6 +2,10 @@
     margin: 10px 10px;
 }
 
+.padding {
+    padding: 10px 10px;
+}
+
 .horizontal-margin {
     margin: 0 10px;
 }
