@@ -1,1 +1,1 @@
-export const baseURL = "http://127.0.0.1:5192/Tasks"; 
+export const baseURL = "https://juanzq10-to-do-list.azurewebsites.net/"; 
