@@ -25,6 +25,9 @@ namespace dotnet_server.Services
         public async Task<List<ToDoTask>> GetAsync() =>
             await _tasksCollection.Find(_ => true).ToListAsync();
 
+        public async Task<List<ToDoTask>> GetAsync(bool completed) => 
+            await _tasksCollection.Find(x => x.Completed == completed).ToListAsync();
+
         public async Task<ToDoTask?> GetAsync(string id) =>
             await _tasksCollection.Find(x => x.Id == id).FirstOrDefaultAsync();
 
@@ -36,6 +39,9 @@ namespace dotnet_server.Services
 
         public async Task RemoveAsync(string id) => 
             await _tasksCollection.DeleteOneAsync(x => x.Id == id);
+
+        public async Task RemoveAsync(bool completed) => 
+            await _tasksCollection.DeleteManyAsync(x => x.Completed == completed);
 
     }
 }
